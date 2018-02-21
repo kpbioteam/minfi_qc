@@ -1,0 +1,6 @@
+categories: [Epigenetics]
+description: Estimate sample-specific quality control (QC) for methylation data
+homepage_url: https://github.com/kpbioteam/minfi_qc
+name: minfi_qc
+owner: kpbioteam
+remote_repository_url: https://github.com/kpbioteam/minfi_qc

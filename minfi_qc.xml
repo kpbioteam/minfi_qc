@@ -1,0 +1,29 @@
+<tool id="minfi_qc" name="minfi_qc" version="0.1.0">
+    <description>provides a simple quality control matrix and plot</description>
+    <requirements>
+        <requirement type="package" version="1.24.0">bioconductor-minfi</requirement>
+    </requirements>
+    <command detect_errors="exit_code"><![CDATA[
+        Rscript  ${__tool_directory__}/minfi_qc.R  "$input1" "$output1" "$output2"
+    ]]></command>
+    <inputs>
+        <param type="data" name="input1" format="rdata" />
+    </inputs>
+    <outputs>
+        <data name="output1" format="txt" />
+        <data name="output2" format="png" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="input1" value="MSet.rdata"/>
+            <output name="output1" file="qc.txt"/>
+            <output name="output2" file="qc.png"/>
+        </test>
+    </tests>
+    <help><![CDATA[
+        Estimate sample-specific quality control (QC) for methylation data
+    ]]></help>
+    <citations>
+        <citation type="doi">10.1093/bioinformatics/btu049</citation>
+    </citations>
+</tool>
