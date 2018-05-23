@@ -7,11 +7,11 @@
         Rscript  ${__tool_directory__}/minfi_qc.R  "$input1" "$output1" "$output2"
     ]]></command>
     <inputs>
-        <param type="data" name="input1" format="rdata" />
+        <param type="data" name="input1" format="rdata" label="Methylation Data"/>
     </inputs>
     <outputs>
-        <data name="output1" format="txt" />
-        <data name="output2" format="png" />
+        <data name="output1" format="txt" label="Quality Control Report"/>
+        <data name="output2" format="png" lable="Quality Control Plot"/>
     </outputs>
     <tests>
         <test>
