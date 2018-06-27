@@ -11,7 +11,7 @@
     </inputs>
     <outputs>
         <data name="output1" format="txt" label="Quality Control Report"/>
-        <data name="output2" format="png" lable="Quality Control Plot"/>
+        <data name="output2" format="png" label="Quality Control Plot"/>
     </outputs>
     <tests>
         <test>
@@ -21,7 +21,7 @@
         </test>
     </tests>
     <help><![CDATA[
-        Estimate sample-specific quality control (QC) for methylation data
+Quality Control (QC) outputs plot of  the log median intensity in both the methylated (M) and unmethylated (U) channels. When plotting these two medians against each other the good samples cluster together, while failed samples tend to separate and have lower median intensities.
     ]]></help>
     <citations>
         <citation type="doi">10.1093/bioinformatics/btu049</citation>
