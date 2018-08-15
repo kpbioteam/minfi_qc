@@ -4,8 +4,29 @@
         <requirement type="package" version="1.24.0">bioconductor-minfi</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-        Rscript  ${__tool_directory__}/minfi_qc.R  "$input1" "$output1" "$output2"
-    ]]></command>
+        Rscript '$read_qc_script'   
+      ]]></command>
+<configfiles>
+      <configfile name="read_qc_script"><![CDATA[
+require("minfi", quietly = TRUE)
+
+args <- commandArgs(trailingOnly = TRUE)
+
+input = args[1]
+output1 = args[2]
+output2 = args[3]
+
+MSet <- get(load('$input1'))
+
+qc <- getQC(MSet)
+
+write.table(qc, '$output1')
+
+png('$output2')
+plotQC(qc)
+dev.off()
+]]> </configfile>
+        </configfiles>
     <inputs>
         <param type="data" name="input1" format="rdata" label="Methylation Data"/>
     </inputs>
